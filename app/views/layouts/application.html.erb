@@ -9,7 +9,9 @@
 <body>
 <% flash.each do |k,v| %>
 	<p class='alert-<%= k %>'><%= v %></p>
-<% end %> 
+<% end %>
+
+<%= render :partial => 'shared/sign_in' %> 
 <%= yield %>
 
 </body>

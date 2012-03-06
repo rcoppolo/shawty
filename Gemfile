@@ -15,6 +15,7 @@ end
 
 
 gem 'devise'
+gem 'twitter-bootstrap-rails'
 
 gem 'rspec-rails', :group => [:test, :development]
 # Gems used only for assets and not required

@@ -3,6 +3,10 @@ class Url < ActiveRecord::Base
   
   validate :user_id, presence: true
   validate :long_url, presence: true, :length => { :minimum => 1 }
+  validates_format_of :long_url,
+                      with: /^http\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\S*)?$/,
+                      message: "I'm not sure that's a url"
+                      
   validate :short_url, uniqueness: true
   
   after_create :generate_short_url

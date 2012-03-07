@@ -2,11 +2,15 @@
 	<tr>
 		<td><b>Short URL</b></td>
 		<td><b>Long URL</b></td>
+		<td><b>Delete</b></td>
 	</tr>
 	<% @urls.each do |url| %>
 		<tr>
 			<td><%= link_to url.short_url, url.short_url %></td>
 			<td><%= url.long_url %></td>
+			<td><%= link_to 'Delete', url, :confirm =>  'Are you sure?', 
+																		 :method => :delete,
+																		:class => 'btn btn-danger' %></td>
 		</tr>
 	<% end %>
 </table>

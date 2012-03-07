@@ -4,6 +4,8 @@
 	<p>
 		<%= f.label :long_url %>
 		<%= f.text_field :long_url %>
+		<%= f.label "Define a custom shawty or we'll assign you one" %>
+		<%= f.text_field :short_url %>
 		<% if user_signed_in? %>
 			<%= f.hidden_field :user_id, :value => current_user.id  %>
 		<% end %>

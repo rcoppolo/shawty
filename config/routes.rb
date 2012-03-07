@@ -5,7 +5,9 @@ URLShortener::Application.routes.draw do
   
   # match '/:user_id/url/' => 'urls#index'# , :as => 'your_urls'
   
-  resources :urls
+  resources :urls do
+    resources :referers
+  end
   
   match '/:short_url' => 'urls#redirector',  :constraints => { :short_url => /[A-z0-9]+/ },
         :as => 'redirector'

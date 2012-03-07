@@ -1,15 +1,16 @@
 class Url < ActiveRecord::Base
   belongs_to :user
+  has_many :referers, :dependent => :destroy
   
   validate :user_id, presence: true
   validate :long_url, presence: true, :length => { :minimum => 1 }
   validates_format_of :long_url,
-                      with: /^http\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\S*)?$/,
-                      message: "I'm not sure that's a url"
+                      with: /^[\S]+$/,
+                      message: "Urls don't have spaces!"
                       
   validate :short_url, uniqueness: true
   
-  after_create :generate_short_url
+  after_create :generate_short_url if :short_url.nil?
     
   def generate_short_url 
     short_url = ''

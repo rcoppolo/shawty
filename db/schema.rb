@@ -11,14 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120306205738) do
+ActiveRecord::Schema.define(:version => 20120307205931) do
+
+  create_table "referers", :force => true do |t|
+    t.integer  "url_id"
+    t.string   "http_referer"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "referers", ["url_id"], :name => "index_referers_on_url_id"
 
   create_table "urls", :force => true do |t|
     t.string   "long_url"
     t.string   "short_url"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "click_counter"
   end
 
   add_index "urls", ["user_id"], :name => "index_urls_on_user_id"

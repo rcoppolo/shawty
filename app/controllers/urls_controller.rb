@@ -16,7 +16,7 @@ class UrlsController < ApplicationController
   def create
     @url = Url.new(params[:url])
     if @url.save
-      flash[:success] = "URL added"
+      flash[:success] = "SHORT URL GENERATED " + @url.short_url
       redirect_to root_url
     else
       flash[:error] = "Something went wrong"

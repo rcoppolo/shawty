@@ -6,7 +6,7 @@
 	</tr>
 	<% @urls.each do |url| %>
 		<tr>
-			<td><%= link_to url.short_url, url.short_url %></td>
+			<td><%= link_to 'localhost:3000/' + url.short_url, url.short_url %></td>
 			<td><%= url.long_url %></td>
 			<td><%= link_to 'Delete', url, :confirm =>  'Are you sure?', 
 																		 :method => :delete,

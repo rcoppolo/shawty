@@ -4,7 +4,9 @@
 	<p>
 		<%= f.label :long_url %>
 		<%= f.text_field :long_url %>
-		<%= f.hidden_field :user_id, :value => current_user.id  %>
+		<% if user_signed_in? %>
+			<%= f.hidden_field :user_id, :value => current_user.id  %>
+		<% end %>
 	</p>
 	
 	<%= f.submit 'shorten' %>

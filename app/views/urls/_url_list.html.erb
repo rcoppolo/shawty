@@ -1,0 +1,12 @@
+<table class="table table-striped table-condensed" style='width:600px; margin: 0 auto;'>
+	<tr>
+		<td><b>Short URL</b></td>
+		<td><b>Long URL</b></td>
+	</tr>
+	<% @urls.each do |url| %>
+		<tr>
+			<td><%= link_to url.short_url, url.short_url %></td>
+			<td><%= url.long_url %></td>
+		</tr>
+	<% end %>
+</table>

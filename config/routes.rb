@@ -1,5 +1,12 @@
 URLShortener::Application.routes.draw do
   devise_for :users
 
-  root :to => 'static_pages#home'
+  root :to => 'urls#new'
+  
+  # match '/:user_id/url/' => 'urls#index'# , :as => 'your_urls'
+  
+  resources :urls
+  
+  match '/:short_url' => 'urls#redirector',  :constraints => { :short_url => /[A-z0-9]+/ },
+        :as => 'redirector'
 end

@@ -1,0 +1,12 @@
+<h2>Enter a URL to be shortened</h2>
+
+<%= form_for(@url) do |f| %>
+	<p>
+		<%= f.label :long_url %>
+		<%= f.text_field :long_url %>
+		<%= f.hidden_field :user_id, :value => current_user.id  %>
+	</p>
+	
+	<%= f.submit 'shorten' %>
+	
+<% end %>

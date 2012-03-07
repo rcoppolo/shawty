@@ -10,7 +10,7 @@
 <% flash.each do |k,v| %>
 	<p class='alert-<%= k %>'><%= v %></p>
 <% end %>
-
+<%= link_to "HOME", root_path%>
 <%= render :partial => 'shared/sign_in' %> 
 <%= yield %>
 

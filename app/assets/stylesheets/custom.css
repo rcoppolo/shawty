@@ -1,0 +1,28 @@
+.relativer{position:relative}
+.button{
+	background: #00a6fc;
+	display: inline-block;
+	text-align: center;
+	padding: 9px 34px 11px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 13px; font-size: 1.3rem;
+	line-height: 1;
+	font-family: "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
+	position: relative;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	margin: 0;
+}
+		
+.my-brand{color:#fff;text-align:center;margin:0 auto;padding-top:120px;}
+.my-brand:hover{text-decoration:none;color:#fff;}
+.new-container {width:940px;height:100px;margin:0 auto;}
+
+#new_url input{height:36px;}
+#url-input{width:450px;font-size:17px;background-color:#eee;
+		   box-shadow:inset 1px 1px 4px 1px #ddd;
+		   -moz-box-shadow:inset 1px 1px 4px 1px #ddd;
+		   -webkit-box-shadow:inset 1px 1px 4px 1px #ddd;}

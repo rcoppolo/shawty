@@ -5,6 +5,10 @@ class UrlsController < ApplicationController
      @urls = Url.find_all_by_user_id(current_user.id)
   end
   
+  def new
+    @url = Url.new
+  end
+  
   def show
     
   end
@@ -13,18 +17,15 @@ class UrlsController < ApplicationController
     session[:return_to] ||= request.referer
     @url = Url.find(params[:id])
   end
-  
-  def new
-    @url = Url.new
-  end
-  
+
   def create
     @url = Url.new(params[:url])
     @url.click_counter = 0
-    
-    unless @url.long_url.match(/^[http:\/\/]/)
-        @url.long_url = "http://" + @url.long_url
-        logger.info { "IS IT VALID? #{@url.valid?}" }
+ 
+    unless @url.long_url.include?('http://')
+      p "HI"
+        @url.update_attribute(:long_url, "http://" + @url.long_url)
+        p @url.long_url
     end
     
     if @url.save

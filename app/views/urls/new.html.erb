@@ -1,16 +1,15 @@
 <h2>Enter a URL to be shortened</h2>
 
 <%= form_for(@url) do |f| %>
-	<p>
-		<%= f.label :long_url %>
-		<%= f.text_field :long_url %>
-		<%= f.label "Define a custom shawty or we'll assign you one" %>
-		<%= f.text_field :short_url %>
-		<% if user_signed_in? %>
-			<%= f.hidden_field :user_id, :value => current_user.id  %>
-		<% end %>
-	</p>
+
+	<% if user_signed_in? %>
+		<%= f.hidden_field :user_id, :value => current_user.id  %>
+	<% end %>
 	
-	<%= f.submit 'shorten' %>
+	<div class='relativer'>
+		<span class='span1 big-p'><b>http://</b></span>
+		<%= f.text_field :long_url, :id => 'url-input' %>
+		<%= f.submit 'shorten', :class => 'button' %>
+	</div>
 	
 <% end %>

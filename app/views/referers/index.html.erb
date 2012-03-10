@@ -2,7 +2,7 @@
 	<% if @referers.blank? %>
 		<h2>This link hasn't been referred yet.  It's probably boring :/</h2>
 	<% else %>
-	 	<% sort_referers_by_frequency(@referers).each do |referred| %>
+	 	<% sort_referers_by_frequency(@referers).each do |referred| %>	
 			<li>Your link <%= referred[0].http_referer %> has been referred <%= referred[1]%> times</li>
 		<% end %>
 	<% end %>

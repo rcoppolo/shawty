@@ -1,15 +1,10 @@
-<h2>Enter a URL to be shortened</h2>
-
-<%= form_for(@url) do |f| %>
-
-	<% if user_signed_in? %>
-		<%= f.hidden_field :user_id, :value => current_user.id  %>
-	<% end %>
-	
-	<div class='relativer'>
-		<span class='span1 big-p'><b>http://</b></span>
-		<%= f.text_field :long_url, :id => 'url-input' %>
-		<%= f.submit 'shorten', :class => 'button' %>
+<div id='form_div'>
+	<div class='centerer'>
+		<%= form_for(@url) do |f| %>
+			<div class='relativer'>
+				<%= f.text_field :long_url, :id => 'url-input' %>
+				<%= f.submit 'shorten', :class => 'submit button' %>
+			</div>
+		<% end %>
 	</div>
-	
-<% end %>
+</div>

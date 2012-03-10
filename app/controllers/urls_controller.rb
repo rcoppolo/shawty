@@ -1,5 +1,6 @@
 class UrlsController < ApplicationController
-  before_filter :signed_in?, :only => :index
+  before_filter :signed_in?, :only => [:index,
+                                       :destroy]
   
   def index
      @urls = Url.find_all_by_user_id(current_user.id)
@@ -20,6 +21,7 @@ class UrlsController < ApplicationController
 
   def create
     @url = Url.new(params[:url])
+    @url.user_id = current_user.id
     @url.click_counter = 0
  
     unless @url.long_url.include?('http://')

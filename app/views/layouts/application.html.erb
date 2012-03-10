@@ -8,12 +8,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
 	<%= render :partial => 'shared/header' %>
-	<div class='container'>
-			
-			<%= render 'shared/errors' %>
-
-			<%= yield %>
-	</div>
+	
+	<!--<div class='new-container'>-->
+		<%= render 'shared/errors' %>
+		<%= yield %>
+	<!--</div>-->
+	
 </body>
 </html>

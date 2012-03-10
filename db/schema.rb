@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120307205931) do
+ActiveRecord::Schema.define(:version => 20120310011212) do
+
+  create_table "redirects", :force => true do |t|
+    t.integer  "url_id"
+    t.string   "http_referer"
+    t.integer  "click_count"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "referers", :force => true do |t|
     t.integer  "url_id"

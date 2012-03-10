@@ -11,17 +11,22 @@ class Url < ActiveRecord::Base
   validate :short_url, uniqueness: true
   
   after_create :generate_short_url  
-    
-  def generate_short_url 
+  
+  private  
+  
+  def generate_short_url
+    self.update_attribute(:short_url, convert_long_url_to_base_62(id))
+  end
+  
+  def convert_long_url_to_base_62 id
     short_url = ''
     characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    characters = characters.split(//).shuffle.join
     base = characters.length
-    num_to_tokenize = id
-    while num_to_tokenize > 0 
-      short_url = characters[(num_to_tokenize % base),1] + short_url
-      num_to_tokenize = (num_to_tokenize / base)
+    while id > 0 
+      short_url = characters[(id % base),1] + short_url
+      id = (id / base)
     end
-    self.update_attributes(:short_url => short_url)
+    short_url
   end
+  
 end

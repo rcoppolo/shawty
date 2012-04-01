@@ -1,10 +1,49 @@
-.relativer{position:relative;width:auto;padding-left:340px;}
+body {
+	background-image:url('furley_bg.png');
+}
+
+#flashes {
+	font-size:17px;
+	text-align:center;
+}
+
+.flash {
+	position:absolute;
+	left:10%;
+}
+
+.relativer{
+	position:relative;
+	padding-left:25px;
+}
+
+.right-menu {
+	float:right;
+	margin-top:15px;
+	margin-right:25px;
+}
+
+.right-menu a {
+	margin-left: 15px;
+	margin-right: 10px;
+	padding: 10px;
+}
+
 .submit.button{
-	background: #99173C;
+	background: #E94E77;
+	padding: 13px 34px 12px;
+	color: white;
+	margin-top: 10px;
+	font-size:20px;
+}
+
+.button {
+	background:#F4EAD5;
+	color:#222;
+	padding:8px;
 	display: inline-block;
 	text-align: center;
-	padding: 9px 34px 11px;
-	color: #fff;
+	border-radius:2px;
 	text-decoration: none;
 	font-weight: bold;
 	font-size: 13px; font-size: 1.3rem;
@@ -19,18 +58,58 @@
 	margin-left:5px;
 	bottom:5px;
 }
-.centerer{margin-left:0;margin-right:0;position:absolute;}
-.submit.button:hover{background:#99173C}
-		
-.my-brand{color:#fff;text-align:center;margin:0 auto;padding-top:40px;}
+
+.button:hover {
+	text-decoration:none;
+	color:#99173C;
+	box-shadow:inset -1px 0px 10px #877898;
+	text-shadow:0px 0px 10px rgba(100,100,100,0.5);
+}
+
+.submit:hover {
+	color:#fff;
+	box-shadow:inset -2px 0px 12px rgba(0,0,0,0.4);
+	text-shadow:0px 0px 10px rgba(100,100,100,0.5);
+}
+
+input.submit:hover {}
+	
+.centerer{margin-left:0;margin-right:0;position:absolute;}	
+.my-brand{color:#fff;text-align:center;margin:0 auto;line-height:1;}
 .my-brand:hover{text-decoration:none;color:#fff;}
-.new-container {width:940px;height:auto;margin:0 auto;}
+.new-container {width:940px;height:auto;margin:0 auto;position:relative}
 .big-p{position:absolute;right:100%;top:22%;font-size:20px;}
 
 
-#form_div{margin-top:120px;background:#EFFFCD;height:60px;padding-top:35px;padding-right:1200px;padding-bottom:15px;position:relative;float:left;}
-#url-input{width:500px;font-size:17px;background-color:#eee;
+.wrapper{margin-top:120px;left:15%;position:absolute;}
+#url-input{width:500px;font-size:24px;background-color:#eee;
 		   box-shadow:inset 1px 1px 4px 1px #ddd;
 		   -moz-box-shadow:inset 1px 1px 4px 1px #ddd;
-		   -webkit-box-shadow:inset 1px 1px 4px 1px #ddd;height:32px;}
+		   -webkit-box-shadow:inset 1px 1px 4px 1px #ddd;padding:14px;}
 
+.register {
+	width: 400px;
+	position: absolute;
+	left: 30%;
+	margin-top: 60px;
+}
+
+form {
+	text-align:center;
+}
+
+.register input[type='password'], input[type='email'] {
+	width:250px;
+	padding:10px;
+	font-size:17px;
+}
+
+.well {
+	border:1px solid #E94E77;
+	background-color: #FDEFFF;
+	box-shadow: 1px 1px 10px #ddd;
+}
+
+.sub-head {
+	color:#E94E77;
+}

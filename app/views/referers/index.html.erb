@@ -1,9 +1,21 @@
-<ul>
+<div class='wrapper'>
 	<% if @referers.blank? %>
-		<h2>This link hasn't been referred yet.  It's probably boring :/</h2>
+		<h2 class='sub-head'>This link hasn't been referred yet.  It's probably boring :/</h2>
 	<% else %>
-	 	<% sort_referers_by_frequency(@referers).each do |referred| %>	
-			<li>Your link <%= referred[0].http_referer %> has been referred <%= referred[1]%> times</li>
-		<% end %>
-	<% end %>
-</ul>
+		<h2 class='sub-head'>These people <em>love</em> your links:</h2><br /><br />
+		<table class="table table-striped table-condensed" style='width:600px; margin: 0 auto;font-size:17px;'>
+			<% sort_referers_by_frequency(@referers).each do |referred| %>	
+				<tr>
+					<td><b>Your URL</b></td>
+					<td><b>Referred Count</b></td>
+					<td><b>Referring URL</b></td>
+				</tr>
+				<tr>
+					<td><%= Url.find(referred[0]).long_url %></td>
+					<td><%= referred[1] %> times</td>
+					<td><%= Referer.find_by_url_id(referred[0]).http_referer%> </td>
+				</tr>
+			<% end %>
+		</table>
+	<% end%>
+</div>

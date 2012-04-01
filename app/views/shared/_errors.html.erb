@@ -1,8 +1,6 @@
-<div class='row'>
 <% flash.each do |k,v| %>
-	<div class='alert alert-<%= k %> span3'>
+	<div class='alert alert-<%= k %> span9 flash'>
 		<a class="close" data-dismiss="alert">×</a>
-		<p> HEY: <%= v %></p>
+		<p id='flashes'><%= random_phrases %> <%= v %></p>
 	</div>
 <% end %>
-</div>

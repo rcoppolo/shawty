@@ -11,7 +11,7 @@ class Url < ActiveRecord::Base
   validate :short_url, uniqueness: true
   
   after_create :generate_short_url  
-  
+    
   private  
   
   def generate_short_url

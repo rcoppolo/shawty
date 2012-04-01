@@ -1,10 +1,6 @@
-<div id='form_div'>
-	<div class='centerer'>
-		<%= form_for(@url) do |f| %>
-			<div class='relativer'>
+<div class='wrapper'>
+		<%= form_for(@url, :html => {:class => 'form-inline'}, :remote => true) do |f| %>
 				<%= f.text_field :long_url, :id => 'url-input' %>
 				<%= f.submit 'shorten', :class => 'submit button' %>
-			</div>
 		<% end %>
-	</div>
 </div>

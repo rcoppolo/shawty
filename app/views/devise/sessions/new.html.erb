@@ -1,17 +1,18 @@
-<h2>Sign in</h2>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html =>{:class => 'well register'}) do |f| %>
+	<h2>Sign in</h2>
+  <div><%= f.email_field :email, :placeholder => 'email' %></div>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <div><%= f.password_field :password, :placeholder => 'password' %></div>
 
   <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+    <div class='form-inline'>
+			<%= f.label :remember_me, 
+									:style => 'font-weight:bold;margin-right:5px;margin-top:5px;'%> 
+			<%= f.check_box :remember_me, :style => 'margin-bottom:5px;' %>
+		</div>
   <% end -%>
 
-  <div><%= f.submit "Sign in" %></div>
+  <div><%= f.submit "Sign in", :class => 'button submit' %></div>
 <% end %>
 
-<%= render "links" %>
+<%#= render "links" %>

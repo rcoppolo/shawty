@@ -1,11 +1,14 @@
 <div class='navbar'>
 	<div class='navbar-inner'>
-		<div class='new-container'>
-				<h1>
-					<%= link_to title, root_path, :style => 'font-family: "Ewert", cursive; font-size: 75px;',
-																		    :class => 'my-brand span12' %>													
-				</h1>
-			<%#= render 'shared/sign_in'%>
+
+		<h1>
+			<%= link_to title, root_path, :style => 'font-family: "Ewert", cursive; font-size: 56px;',
+																		:class => 'my-brand relativer span1' %>													
+		</h1>
+		
+		<div class='right-menu'>
+			<%= render 'shared/sign_in'%>
 		</div>
+
 	</div>
 </div>

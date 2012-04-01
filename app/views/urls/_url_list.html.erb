@@ -1,5 +1,4 @@
 <table class="table table-striped table-condensed" style='width:600px; margin: 0 auto;'>
-	<%= debug(params)%>
 	<tr>
 		<td><b>Short URL</b></td>
 		<td><b>Long URL</b></td>
@@ -14,10 +13,9 @@
 			<td><%= url.long_url %></td>
 			<td><%= url.click_counter %></td>
 			<td><%= link_to "Top Referers", url_referers_path(url) %>
-			<td><%= link_to 'Edit', edit_url_path(url), :class => 'btn btn-warning' %></td>
+			<td><%= link_to 'Edit', edit_url_path(url), :class => 'button submit', :style => 'padding:4px;margin-top:2px' %></td>
 			<td><%= link_to 'Delete', url, :confirm =>  'Are you sure?', 
-																		 :method => :delete,
-																		 :class => 'btn btn-danger' %></td>
+																		 :method => :delete %></td>
 		</tr>
 	<% end %>
 </table>

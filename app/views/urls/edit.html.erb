@@ -1,5 +1,5 @@
 <%= form_for @url, :html => {:class => 'well register'} do |f| %>
-	<%= f.label 'change your short URL' %>
+	<%= f.label 'customize your short URL' %>
 	<%= f.text_field :short_url, :placeholder => "#{@url.short_url}" %>
 	
 	<%= f.submit 'update your URL', :class => 'button submit' %>

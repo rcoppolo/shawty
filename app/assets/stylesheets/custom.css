@@ -2,6 +2,14 @@ body {
 	background-image:url('furley_bg.png');
 }
 
+.tagline {
+	color:#F4EAD5;
+	position:relative;
+	left:16%;
+	top:65%;
+}
+
+
 #flashes {
 	font-size:17px;
 	text-align:center;
@@ -10,6 +18,7 @@ body {
 .flash {
 	position:absolute;
 	left:10%;
+	border:1px solid #BBB;
 }
 
 .relativer{
@@ -98,7 +107,7 @@ form {
 	text-align:center;
 }
 
-.register input[type='password'], input[type='email'] {
+.register input[type='password'], input[type='email'], input[type='text'] {
 	width:250px;
 	padding:10px;
 	font-size:17px;

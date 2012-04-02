@@ -12,9 +12,9 @@
 			<td><%= link_to 'localhost:3000/' + url.short_url, url.short_url %></td>
 			<td><%= url.long_url %></td>
 			<td><%= url.click_counter %></td>
-			<td><%= link_to "Top Referers", url_referers_path(url) %>
-			<td><%= link_to 'Edit', edit_url_path(url), :class => 'button submit', :style => 'padding:4px;margin-top:2px' %></td>
-			<td><%= link_to 'Delete', url, :confirm =>  'Are you sure?', 
+			<td><%= link_to "top referers", url_referers_path(url) %>
+			<td><%= link_to 'edit', edit_url_path(url), :class => 'button submit', :style => 'padding:4px;margin-top:2px' %></td>
+			<td><%= link_to 'delete', url, :confirm =>  'Are you sure?', 
 																		 :method => :delete %></td>
 		</tr>
 	<% end %>

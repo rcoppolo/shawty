@@ -26,22 +26,15 @@ class UrlsController < ApplicationController
     @url = Url.new(params[:url])
     @url.user_id = current_or_guest_user.id
     @url.click_counter = 0
-    
-    #render "new" if @url.long_url.blank?
-    
-    # unless @url.long_url.include?('http://')
-    #     @url.update_attribute(:long_url, "http://" + @url.long_url)
-    #   end
-    
+
     respond_to do |format|
       if @url.save
         flash.now[:success] = " Here's your new URL: " + "http://#{request.host_with_port}/" + @url.short_url
         format.js
         format.html
       else
-        flash.now[:error] = "Error shortening that URL! Make sure its in thef ormat of http:// of https://"
+        flash.now[:error] = "Error shortening that URL! Make sure it's in the format of http:// of https://"
         format.js
-        #render "new"
       end
     end
   end

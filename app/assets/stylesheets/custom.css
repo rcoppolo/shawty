@@ -123,3 +123,17 @@ form {
 .sub-head {
 	color:#E94E77;
 }
+
+footer {
+	margin-top:50%;
+	text-align:center;
+}
+
+footer span {
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.pinkie {
+	color:#E94E77;;
+}

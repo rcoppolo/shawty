@@ -26,7 +26,9 @@ class UrlsController < ApplicationController
     @url = Url.new(params[:url])
     @url.user_id = current_or_guest_user.id
     @url.click_counter = 0
- 
+    
+    render "new" if @url.long_url.blank?
+    
     unless @url.long_url.include?('http://')
       @url.update_attribute(:long_url, "http://" + @url.long_url)
     end
@@ -49,7 +51,7 @@ class UrlsController < ApplicationController
       flash[:success] = " URL saved."
       redirect_to session[:return_to] 
     else
-      flash[:error] = "Damn son, its one field"
+      flash[:error] = "Really? Its one field"
       redirect_to 'http://failblog.org'
     end
   end

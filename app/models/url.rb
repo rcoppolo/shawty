@@ -3,7 +3,7 @@ class Url < ActiveRecord::Base
   has_many :referers, :dependent => :destroy
   
   validate :user_id, presence: true
-  validate :long_url, presence: true, :length => { :minimum => 1 }
+  validate :long_url, presence: true, :length => { :minimum => 13 }
   validates_format_of :long_url,
                       with: /^[\S]+$/,
                       message: "Urls don't have spaces!"

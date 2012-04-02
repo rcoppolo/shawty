@@ -1,12 +1,12 @@
 class Url < ActiveRecord::Base
+  require 'open-uri'
+  
   belongs_to :user
   has_many :referers, :dependent => :destroy
   
   validate :user_id, presence: true
   validate :long_url, presence: true, :length => { :minimum => 13 }
-  validates_format_of :long_url,
-                      with: /^[\S]+$/,
-                      message: "Urls don't have spaces!"
+  validates_format_of :long_url, :with => URI::regexp(%w(http https))
                       
   validate :short_url, uniqueness: true
   

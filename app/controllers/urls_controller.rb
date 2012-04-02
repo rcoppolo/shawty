@@ -27,11 +27,11 @@ class UrlsController < ApplicationController
     @url.user_id = current_or_guest_user.id
     @url.click_counter = 0
     
-    render "new" if @url.long_url.blank?
+    #render "new" if @url.long_url.blank?
     
-    unless @url.long_url.include?('http://')
-      @url.update_attribute(:long_url, "http://" + @url.long_url)
-    end
+    # unless @url.long_url.include?('http://')
+    #     @url.update_attribute(:long_url, "http://" + @url.long_url)
+    #   end
     
     respond_to do |format|
       if @url.save
@@ -39,8 +39,9 @@ class UrlsController < ApplicationController
         format.js
         format.html
       else
-        flash[:error] = "Error shortening that URL"
-        render "new"
+        flash.now[:error] = "Error shortening that URL! Make sure its in thef ormat of http:// of https://"
+        format.js
+        #render "new"
       end
     end
   end

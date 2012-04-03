@@ -1,13 +1,15 @@
 body {
 	background-image:url('furley_bg.png');
+	font-family: 'Oxygen', sans-serif;
 }
 
 .tagline {
 	color:#F4EAD5;
 	position:relative;
 	left:15%;
-	top:65%;
+	top:62%;
 	width:200px;
+	font-size:17px;
 }
 
 
@@ -125,7 +127,7 @@ form {
 }
 
 footer {
-	margin-top:20%;
+	margin-top:15%;
 	text-align:center;
 }
 
@@ -140,4 +142,8 @@ footer span {
 
 .pinkie {
 	color:#E94E77;;
+}
+
+#manage {
+	font-size:19px;
 }

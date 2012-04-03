@@ -101,7 +101,7 @@ input.submit:hover {}
 #url-input{width:500px;font-size:21px;background-color:#eee;
 		   box-shadow:inset 1px 1px 4px 1px #ddd;
 		   -moz-box-shadow:inset 1px 1px 4px 1px #ddd;
-		   -webkit-box-shadow:inset 1px 1px 4px 1px #ddd;padding:13px;}
+		   -webkit-box-shadow:inset 1px 1px 4px 1px #ddd;padding:13px;padding-top:18px;}
 
 .register {
 	width: 400px;

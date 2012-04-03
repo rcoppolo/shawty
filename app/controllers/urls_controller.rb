@@ -34,7 +34,7 @@ class UrlsController < ApplicationController
         format.js
         format.html
       else
-        flash.now[:error] = "Error shortening that URL! Make sure it's in the format of http:// of https://"
+        flash.now[:error] = "Error shortening that URL! Make sure it starts with http(s)://"
         format.js
       end
     end

@@ -1,6 +1,6 @@
 <div class='wrapper'>
 		<%= form_for(@url, :html => {:class => 'form-inline'}, :remote => true) do |f| %>
-			<span class="help-inline" style='font-size:24px;'>http(s)://</span>	<%= f.text_field :long_url, :id => 'url-input' %>
+				<%= f.text_field :long_url, :id => 'url-input', :placeholder => 'http(s)://' %>
 				<%= f.submit 'shorten', :class => 'submit button' %>
 		<% end %>
 		

@@ -29,7 +29,8 @@ class UrlsController < ApplicationController
 
     respond_to do |format|
       if @url.save
-        flash.now[:success] = " Here's your new URL: " + "http://#{request.host_with_port}/" + @url.short_url
+        link = "<a href=\"http://#{request.host_with_port}/#{@url.short_url}\">http://#{request.host_with_port}/#{@url.short_url}</a>"  
+        flash.now[:success] = " Your URL #{link}".html_safe
         format.js
         format.html
       else

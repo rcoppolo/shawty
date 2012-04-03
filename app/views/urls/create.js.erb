@@ -1,3 +1,4 @@
-$('.new-container').append("<%= escape_javascript(render(:partial => 'shared/errors', :locals => {:flash => flash})) %>");
+$('.flash-holder').html("<%= escape_javascript(render(:partial => 'shared/errors', :locals => {:flash => flash})) %>");
+console.log($('.flash').get[0]);// + 
 $('#url-input').val('');
 //$('#form-wrapper').children().first().delay(400).fadeOut('2000');
